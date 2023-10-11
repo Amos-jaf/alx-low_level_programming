@@ -19,9 +19,12 @@ void times_table(void)
 			if (value <= 9)
 			{
 				_putchar(value + '0');
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
+				if (base < 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+				}
 			}
 			else if ((value > 9) && (value <= 81))
 			{
@@ -29,8 +32,11 @@ void times_table(void)
 				units = value % 10;
 				_putchar(tens + '0');
 				_putchar(units + '0');
-				_putchar(',');
-				_putchar(' ');
+				if (base < 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
 			}
 		}
 		_putchar('\n');
