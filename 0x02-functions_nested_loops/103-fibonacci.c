@@ -10,11 +10,11 @@
 
 int main(void)
 {
-	long int place_holder, current, prev;
+	long int place_holder, current, prev, sum;
 
 	current = 2;
 	prev = 1;
-	printf("%ld", current);
+	sum = current;
 
 	while (current < 4000000)
 	{
@@ -23,10 +23,9 @@ int main(void)
 		prev = place_holder;
 		if (current % 2 == 0)
 		{
-			printf(", ");
-			printf("%ld", current);
+			sum += current;
 		}
 	}
-	printf("\n");
+	printf("%ld\n", sum);
 	return (0);
 }
