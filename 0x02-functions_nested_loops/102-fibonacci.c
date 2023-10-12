@@ -16,13 +16,13 @@ int main(void)
 	prev = 1;
 	printf("%ld, %ld, ", prev, current);
 
-	for (i = 1; i < 48; i++)
+	for (i = 1; i < 49; i++)
 	{
 		place_holder = current;
 		current += prev;
 		prev = place_holder;
 		printf("%ld", current);
-		if (i < 47)
+		if (i < 48)
 			printf(", ");
 	}
 	printf("\n");
