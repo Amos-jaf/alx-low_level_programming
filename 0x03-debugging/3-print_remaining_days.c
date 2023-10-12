@@ -7,6 +7,7 @@
  * @month: month in number format
  * @day: day of month
  * @year: year
+ * Description: function checks for leap year and returns number of days
  * Return: void
  */
 
