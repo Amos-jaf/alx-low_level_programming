@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
  * times_table - Prints multiples from 1 - through 9
@@ -16,29 +17,46 @@ void times_table(void)
 		for (base = 0; base <= 9; base++)
 		{
 			value = base * multiplier;
-			if (value <= 9)
+			if (value == 0)
 			{
 				_putchar(value + '0');
-				if (base < 9)
+				_putchar(',');
+				_putchar(' ');
+			}
+			else if (value > 0 && value <= 9)
+			{
+				if (base <= 9)
 				{
 					_putchar(',');
 					_putchar(' ');
 					_putchar(' ');
 				}
+				_putchar(value + '0');
 			}
 			else if ((value > 9) && (value <= 81))
 			{
 				tens = value / 10;
 				units = value % 10;
-				_putchar(tens + '0');
-				_putchar(units + '0');
-				if (base < 9)
+				if (base <= 9)
 				{
 					_putchar(',');
 					_putchar(' ');
 				}
+				_putchar(tens + '0');
+				_putchar(units + '0');
 			}
 		}
 		_putchar('\n');
 	}
+}
+
+int main(void)
+{
+    times_table();
+    return (0);
+}
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
