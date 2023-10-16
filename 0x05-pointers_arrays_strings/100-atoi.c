@@ -11,7 +11,8 @@
 
 int _atoi(char *s)
 {
-	int  num, i, sign_count;
+	int i, sign_count;
+	unsigned int num;
 
 	num = 0;
 	sign_count = 0;
@@ -39,14 +40,7 @@ int _atoi(char *s)
 	}
 	if (sign_count % 2 == 0)
 	{
-		if(num == 2147483648)
-		{
-			return (-2147483647 - 1);
-		}
-		else
-		{
-			return (num);
-		}
+		return (num);
 	}
 	else
 	{
