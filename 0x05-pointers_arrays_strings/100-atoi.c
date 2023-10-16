@@ -39,14 +39,17 @@ int _atoi(char *s)
 	}
 	if (sign_count % 2 == 0)
 	{
-		return (num);
+		if(num == 2147483648)
+		{
+			return (-2147483647 - 1);
+		}
+		else
+		{
+			return (num);
+		}
 	}
 	else
 	{
-		if (num == 2147483648)
-			num = -2147483647 - 1;
-			return (num);
-		else
-			return (0 - num);
+		return (0 - num);
 	}
 }
