@@ -43,6 +43,9 @@ int _atoi(char *s)
 	}
 	else
 	{
-		return (0 - num);
+		if (num > 2147483647)
+			return (-2147483647 - 1);
+		else
+			return (0 - num);
 	}
 }
