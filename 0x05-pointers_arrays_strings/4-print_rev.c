@@ -19,7 +19,6 @@ void print_rev(char *s)
 	count--;
 	while (count >= 0)
 	{
-		printf("%d", count);
 		_putchar(s[count]);
 		count--;
 	}
