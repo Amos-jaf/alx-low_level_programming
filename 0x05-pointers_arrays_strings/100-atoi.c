@@ -44,7 +44,8 @@ int _atoi(char *s)
 	else
 	{
 		if (num == 2147483648)
-			return (-2147483647 - 1);
+			num = -2147483647 - 1;
+			return (num);
 		else
 			return (0 - num);
 	}
