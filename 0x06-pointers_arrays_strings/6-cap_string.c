@@ -11,9 +11,8 @@
 char *cap_string(char *s)
 {
 	int i, j, arr_size;
-	char separators[];
 
-	separators = {
+	char separators[] = {
 		'\n', ' ', '\t', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'
 	};
 	arr_size = sizeof(separators) / sizeof(separators[0]);
