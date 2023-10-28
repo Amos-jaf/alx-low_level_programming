@@ -1,6 +1,0 @@
-#!/bin/bash
-
-for file in *.c; do
-  sed -i '/int main/,/}/d' "$file"
-done
-
