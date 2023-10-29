@@ -13,17 +13,17 @@ int main(int argc, char *argv[])
 	char *s;
 	int change_count;
 
-
-	s = argv[1];
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	s = argv[1];
 	change_count = check_change(s);
 	if (change_count == -1)
 	{
 		printf("%d\n", 0);
+		return (0);
 	}
 	printf("%d\n", change_count);
 	return (0);
