@@ -15,14 +15,6 @@ char *str_concat(char *s1, char *s2)
 	char *str;
 
 	str = NULL;
-	if (s1 == NULL)
-	{
-		s1 = "";
-	}
-	if (s2 == NULL)
-	{
-		s2 = "";
-	}
 	count = str_count(s1, s2);
 	printf("%d\n", count);
 	str = malloc((sizeof(char) * count) + 1);
@@ -64,6 +56,14 @@ int str_count(char *s1, char *s2)
 	count = 0;
 	i = 0;
 	j = 0;
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 == "";
+	}
 	while (s1[i] != '\0')
 	{
 		count++;
