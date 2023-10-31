@@ -58,11 +58,11 @@ int str_count(char *s1, char *s2)
 	j = 0;
 	if (s1 == NULL)
 	{
-		s1 = "";
+		return (0);
 	}
 	if (s2 == NULL)
 	{
-		s2 == "";
+		return (0);
 	}
 	while (s1[i] != '\0')
 	{
@@ -75,4 +75,19 @@ int str_count(char *s1, char *s2)
 		j++;
 	}
 	return (count);
+}
+
+int main(void)
+{
+    char *s;
+
+    s = str_concat("Betty ", "Holberton");
+    if (s == NULL)
+    {
+        printf("failed\n");
+        return (1);
+    }
+    printf("%s\n", s);
+    free(s);
+    return (0);
 }
