@@ -18,7 +18,6 @@ char *str_concat(char *s1, char *s2)
 	s1_count = str_count(s1);
 	s2_count = str_count(s2);
 	count = s1_count + s2_count;
-	printf("%d\n", count);
 	str = malloc((sizeof(char) * count) + 1);
 	if (str == NULL)
 	{
