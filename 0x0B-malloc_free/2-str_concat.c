@@ -11,11 +11,13 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int count, i;
+	int count, s1_count, s2_count, i;
 	char *str;
 
 	str = NULL;
-	count = str_count(s1, s2);
+	s1_count = str_count(s1);
+	s2_count = str_count(s2);
+	count = s1_count + s2_count;
 	printf("%d\n", count);
 	str = malloc((sizeof(char) * count) + 1);
 	if (str == NULL)
@@ -42,37 +44,24 @@ char *str_concat(char *s1, char *s2)
 
 /**
  * str_count - function that counts the characters of two input strings
- * @s1: first input string
- * @s2: second input string
+ * @s: first input string
  * Description: loops through two strings while incrementing count
  * Return: the lenghth of the two strings combined
  */
 
-int str_count(char *s1, char *s2)
+int str_count(char *s)
 {
 
-	int count, i, j;
+	int  i;
 
-	count = 0;
 	i = 0;
-	j = 0;
-	if (s1 == NULL)
+	if (s == NULL)
 	{
-		return (0);
+		return (i);
 	}
-	if (s2 == NULL)
+	while (s[i] != '\0')
 	{
-		return (0);
-	}
-	while (s1[i] != '\0')
-	{
-		count++;
 		i++;
 	}
-	while (s2[j] != '\0')
-	{
-		count++;
-		j++;
-	}
-	return (count);
+	return (i);
 }
