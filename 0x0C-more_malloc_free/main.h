@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <string.h>
 
 unsigned int s_count(char *s);
 int _putchar(char c);
