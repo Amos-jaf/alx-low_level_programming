@@ -13,14 +13,69 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog = malloc(sizeof(new_dog));
+	dog_t *create_dog;
 
-	if (new_dog == NULL)
+	create_dog = malloc(sizeof(dog_t));
+	create_dog->name = malloc(sizeof(_strlen(name) + 1));
+	if (create_dog->name == NULL)
 	{
-		return (NULL);
+		free(create_dog);
 	}
-	new_dog->name = name;
-	new_dog->age = age;
-	new_dog->owner = owner;
-	return (new_dog);
+	else
+	{
+		_strcpy(create_dog->name, name);
+	}
+	create_dog->owner = malloc(sizeof(_strlen(owner) + 1));
+	if (create_dog->owner == NULL)
+	{
+		free(create_dog->name);
+		free(create_dog);
+	}
+	else
+	{
+		_strcpy(create_dog->owner, owner);
+	}
+	create_dog->age = age;
+	return (create_dog);
+}
+
+/**
+ * _strlen - function to determine the length of a string
+ * @str: input string
+ * Description: Loops through the string and returns the count
+ * Return: a count with type int
+ */
+
+int _strlen(char *str)
+{
+	int count;
+
+	count = 0;
+	while (str[count] != '\0')
+	{
+		count++;
+	}
+	return (count);
+}
+
+/**
+ * _strcpy - function that copies the content of one buffer into another
+ * @dest: destination string to be copied into
+ * @src: source string to be copied form
+ * Description: The function copies every character from src to dest
+ * Return: pointer to dest string
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int s_count;
+
+	s_count = 0;
+	while (src[s_count] != '\0')
+	{
+		dest[s_count] = src[s_count];
+		s_count++;
+	}
+	dest[s_count] = '\0';
+	return (dest);
 }
