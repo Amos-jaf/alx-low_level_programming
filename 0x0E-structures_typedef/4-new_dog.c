@@ -73,7 +73,7 @@ char *_strcpy(char *dest, char *src)
 	s_count = 0;
 	if (dest == NULL)
 	{
-		return;
+		return (NULL);
 	}
 	while (src[s_count] != '\0')
 	{
