@@ -3,6 +3,7 @@
 /**
  * sum_them_all - variadic function that sums all the arguments
  *@n: number of arguments
+ *@...: other numbers in argument
  * Description: Function utilizes stdarg to iterate through n number of
  * arguments and prints the sum of all of them
  * Return: (sum);
