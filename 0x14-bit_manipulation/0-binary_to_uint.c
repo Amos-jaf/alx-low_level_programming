@@ -16,6 +16,10 @@ unsigned int binary_to_uint(const char *b)
 	number = 0;
 	factor = 1;
 
+	if (b == NULL)
+	{
+		return (0);
+	}
 	a = copy_buffer(b);
 	a = swap_str(a);
 	for (i = 0; a[i] != '\0'; i++)
