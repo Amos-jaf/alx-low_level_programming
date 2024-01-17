@@ -16,7 +16,7 @@ char *str_concat(char *s1, char *s2)
 	unsigned int total_len;
 
 	if (s1 == NULL && s2 == NULL)
-		return (NULL);
+		total_len = 0;
 	else if (s1 != NULL && s2 == NULL)
 		total_len = len_str(s1) + 1;
 	else if (s2 != NULL && s1 == NULL)
