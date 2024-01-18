@@ -7,7 +7,8 @@
  *
  * Description: Utilizes the malloc function to assign the
  * specific amount of memmory that is enough for the array while
- * taking into consideration the size of each element.
+ * taking into consideration the size of each element. After allocating
+ * the memory, it is initialized to zero
  * Return: The size of the memory to be allocated
  */
 
