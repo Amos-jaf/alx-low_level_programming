@@ -32,6 +32,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		total_len = str_len(s1)	+ n + 1;
 	}
 	buffer = malloc(sizeof(char) * (total_len + 1));
+	if (buffer == NULL)
+		return (NULL);
 	final_buffer = str_n(buffer, total_len, s1, s2, n);
 	return (final_buffer);
 }
@@ -56,6 +58,7 @@ char *cpy_str(char *buffer, char *str, unsigned int n_chars)
 	{
 		buffer[i] = str[i];
 	}
+	buffer[i] = '\0';
 	return (buffer);
 }
 
@@ -78,6 +81,8 @@ char *str_n(char *buf, unsigned int b_len, char *s1, char *s2, unsigned int n)
 	char *buffer;
 
 	j = 0;
+	if (b_len == 0)
+		return (NULL);
 	if (s1 == NULL && s2 == NULL)
 		buffer = NULL;
 	if (s1 != NULL && s2 == NULL)
@@ -88,9 +93,11 @@ char *str_n(char *buf, unsigned int b_len, char *s1, char *s2, unsigned int n)
 	{
 		buffer = cpy_str(buf, s1, str_len(s1));
 		for (i = str_len(s1); i < b_len && j < n; i++, j++)
+		{
 			buffer[i] = s2[j];
+		}
+		buffer[i] = '\0';
 	}
-	buffer[b_len - 1] = '\0';
 	return (buffer);
 }
 
