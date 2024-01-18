@@ -17,13 +17,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int total_len;
 	char *buffer, *final_buffer;
 
-	if (n > str_len(s2))
-		n = str_len(s2);
 	if (s1 == NULL && s2 == NULL)
 	{
 		total_len = 0;
 	}
-	else if (s1 != NULL && s2 == NULL)
+	if (n > strr_len(s2))
+		n = str_len(s2);
+
+	if (s1 != NULL && s2 == NULL)
 		total_len = str_len(s1)  + 1;
 	else if (s1 == NULL && s2 != NULL)
 		total_len = n + 1;
@@ -84,7 +85,7 @@ char *str_n(char *buf, unsigned int b_len, char *s1, char *s2, unsigned int n)
 	if (b_len == 0)
 		return (NULL);
 	if (s1 == NULL && s2 == NULL)
-		buffer = NULL;
+		return (NULL);
 	if (s1 != NULL && s2 == NULL)
 		buffer = cpy_str(buf, s1, str_len(s1));
 	else if (s1 == NULL && s2 != NULL)
