@@ -78,6 +78,8 @@ char *str_n(char *buf, unsigned int b_len, char *s1, char *s2, unsigned int n)
 	char *buffer;
 
 	j = 0;
+	if (s1 == NULL && s2 == NULL)
+		buffer = NULL;
 	if (s1 != NULL && s2 == NULL)
 		buffer = cpy_str(buf, s1, str_len(s1));
 	else if (s1 == NULL && s2 != NULL)
