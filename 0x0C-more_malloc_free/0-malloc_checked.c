@@ -1,10 +1,14 @@
 #include "main.h"
 
 /**
- * malloc_checked - function that returns an allocated memory
- * @b: input with type unsigned int for the memory allocation
- * Description: uses malloc function for memory allocation.
- * Return: pointer to memory allocated on success and 98 on failure
+ * malloc_checked - function that allocates a specific number of passed
+ * @b: The specified number of bytes to be allocated
+ *
+ * Description: Using malloc, the function allocates to a void pointer a
+ * specified number of bytes determined by the argument passed into the
+ * functiont.
+ *
+ * Return: the void pointer
  */
 
 void *malloc_checked(unsigned int b)
@@ -13,8 +17,6 @@ void *malloc_checked(unsigned int b)
 
 	ptr = malloc(b);
 	if (ptr == NULL)
-	{
 		exit(98);
-	}
 	return (ptr);
 }
